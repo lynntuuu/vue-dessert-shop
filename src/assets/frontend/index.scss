@@ -1,0 +1,236 @@
+.brand-info {
+  .brand-content {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    margin-left: 0;
+    @media (min-width: 768px) {
+      margin-left: 2%;
+    }
+    @media (min-width: 992px) {
+      margin-left: 10%;
+    }
+    h3 {
+      font-family: 'Raleway', sans-serif;
+      font-size: $h3-font-size;
+      color: $secondary;
+      letter-spacing: 5px;
+      @media (min-width: 768px) {
+        font-size: $h2-font-size;
+      }
+      @media (min-width: 992px) {
+        font-size: $h1-font-size;
+      }
+      span {
+        font-size: 1rem;
+        letter-spacing: 1px;
+      }
+    }
+    p {
+      color: $gray-700;
+      letter-spacing: 1px;
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
+    &>span {
+      display: block;
+      color: gray;
+      font-weight: 600;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      position: relative;
+      &:before,&:after {
+        content: "";
+        width: 20%;
+        height: 1px;
+        background: gray;
+        position: absolute;
+        top: 50%;
+      }
+      &:before {
+        left: 15%;
+      }
+      &:after {
+        right: 15%;
+      }
+    }
+  }
+
+  img {
+    max-width: 50%;
+    height: auto;
+    margin-left: 0;
+    @media (min-width: 768px) {
+      max-width: 45%;
+    }
+    @media (min-width: 992px) {
+      max-width: 35%;
+    }
+  }
+}
+
+.features-info {
+  .features-imgs,.features-content{
+    width: 100%;
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+  }
+  .features-imgs {
+    position: relative;
+    height: 350px;
+    @media (min-width: 576px) {
+      height: 400px;
+    }
+    @media (min-width: 768px) {
+      height: 350px;
+    }
+    @media (min-width: 992px) {
+      height: 450px;
+    }
+    .top-img {
+      max-width: 35%;
+      height: auto;
+      position: absolute;
+      top: 2%;
+      right: 50%;
+      z-index: 1;
+      @media (min-width: 768px) {
+        max-width: 40%;
+      }
+      @media (min-width: 992px) {
+        max-width: 35%;
+      }
+    }
+    .under-img {
+      max-width: 40%;
+      height: auto;
+      position: absolute;
+      top: 30%;
+      right: 15%;
+      box-shadow: 22px 22px 1px $secondary;
+      @media (min-width: 768px) {
+        right: 8%;
+        max-width: 50%;
+      }
+      @media (min-width: 992px) {
+        max-width: 47%;
+      }
+    }
+  }
+  .features-content {
+    background-color: rgba(237, 198, 69, 0.247);
+    @media (min-width: 768px) {
+      background-color: transparent;
+    }
+    @media (min-width: 992px) {
+    }
+    p {
+      color: $gray-700;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+      @media (max-width: 768px) {
+        padding-left: 1rem;
+      }
+      .heart-icon {
+        color: $light-red;
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+.angle-right {
+  animation: slideOutRight 1s infinite;
+}
+.bg-yellow {
+  background-color: #fbd96d;
+}
+.bg-pink {
+  background-color: #fccdc3;
+}
+.bg-green {
+  background-color: #c7d8ab;
+}
+.flagship {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  p {
+    color: $gray-700;
+    font-size: .9rem;
+    letter-spacing: 1px;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    @media (min-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+  button {
+    align-self: flex-end;
+    margin-right: 5%;
+  }
+}
+.image1-container {
+  height: 350px;
+  background: url('./assets/images/presentation1.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  @media (min-width: 768px) {
+    background-size: contain;
+  }
+}
+
+.image2-container {
+  height: 350px;
+  background: url('./assets/images/presentation2.jpg') no-repeat;
+  background-size: cover;
+  background-position: 25% 75%;
+  @media (min-width: 768px) {
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+.image3-container {
+  height: 350px;
+  background: url('./assets/images/presentation3.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  @media (min-width: 768px) {
+    background-size: contain;
+  }
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  letter-spacing: 5px;
+  margin: 1rem 0;
+  &:before,&:after {
+    content: "";
+    flex: 1;
+    margin: 0 3rem;
+    border: 0.5px solid $primary;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.animated,.animated-top {
+  opacity: 0;
+  transition: all 1.5s;
+  transform: translateY(50px);
+}
+
+.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+}
