@@ -1,6 +1,9 @@
 <template>
   <div>
     <loading :active.sync="isLoading">
+      <template slot="default">
+        <img src="@/assets/images/loading.png">
+      </template>
     </loading>
     <div class="bg-login-image vh-100">
       <div class="container">
