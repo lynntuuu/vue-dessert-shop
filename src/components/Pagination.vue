@@ -9,7 +9,7 @@
           </a>
         </li>
         <li class="page-item" v-for="page in pages.total_pages" :key="page" 
-        :class="{'active' : pages.current_page === page }">
+        :class="{'active' : pages.current_page === page}">
           <a class="page-link" href="#" @click.prevent="changePage(page)">
             {{page}}
           </a>  

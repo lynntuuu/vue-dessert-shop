@@ -19,10 +19,10 @@
                 <div class="cart-image d-inline-block" :style="{ 'backgroundImage':`url('${item.product.imageUrl}')` }"></div>
               </td>
               <td class="align-middle cart-product">
-                {{ item.product.title }}
+                {{item.product.title}}
                 <div class="text-success" v-if="item.coupon">
                   已套用優惠券<br>
-                  <small>{{ item.coupon.title }}</small>
+                  <small>{{item.coupon.title}}</small>
                   </div>
                 <div class="d-md-none mt-3">
                   <div class="input-group">
@@ -66,7 +66,7 @@
                   <font-awesome-icon icon="trash-alt"/>
                 </button>
               </td>
-              <td class="align-middle text-right">{{ item.total | currency }}元</td>
+              <td class="align-middle text-right">{{item.total | currency}}元</td>
             </tr>
           </tbody>
           <tfoot>
@@ -95,7 +95,7 @@
               </td>
               <td colspan="5" class="text-right">
                 小計:
-                <span class="mr-1">{{ cart.total | currency }}元</span>
+                <span class="mr-1">{{cart.total | currency}}元</span>
               </td>
             </tr>
             <tr>
@@ -103,13 +103,13 @@
                 v-if="(cart.total - cart.final_total) > 0"
                 >
                 折扣金額:
-                <span class="ml-4 mr-1">{{ cart.total - cart.final_total | currency }}元</span>
+                <span class="ml-4 mr-1">{{cart.total - cart.final_total | currency}}元</span>
               </td>
             </tr>
             <tr>
               <td colspan="5" class="text-right text-danger font-weight-bold">
                 總計:
-                <span class="h2">{{ cart.final_total | currency }}元</span>
+                <span class="h2">{{cart.final_total | currency}}元</span>
               </td>
             </tr>
           </tfoot>

@@ -38,7 +38,7 @@
             <font-awesome-icon icon="shopping-cart" class="shopping-cart text-secondary"
               transform="grow-3"/>
             <span class="badge badge-light-red rounded-circle text-light"
-              v-if="cart.total">{{ cart.carts.length }}</span>
+              v-if="cart.total">{{cart.carts.length}}</span>
           </a>
           <div class="dropdown-menu dropdown-menu-right px-2" aria-labelledby="navbarDropdown">
             <div class="mt-3 text-center" v-if="!cart.total">
@@ -56,9 +56,9 @@
                   </thead>
                   <tbody class>
                     <tr class="border-top" v-for="item in cart.carts" :key="item.id">
-                      <th class="align-middle cart-product">{{ item.product.title }}</th>
-                      <td class="text-center align-middle">{{ item.qty }}</td>
-                      <td class="text-right align-middle text-nowrap">{{ item.total | currency }}</td>
+                      <th class="align-middle cart-product">{{item.product.title}}</th>
+                      <td class="text-center align-middle">{{item.qty}}</td>
+                      <td class="text-right align-middle text-nowrap">{{item.total | currency}}</td>
                       <td>
                         <button class="btn btn-sm btn-outline-light-red"
                           @click="removeCartItem(item.id)">

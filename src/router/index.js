@@ -95,31 +95,7 @@ export default new Router({
           component: () => import('@/components/pages/admin/Coupons.vue'),
           meta: { requiresAuth: true },
         },
-        // {
-        //   path: 'report',
-        //   name: 'Report',
-        //   component: () => import('@/components/pages/admin/Report.vue'),
-        //   meta: { requiresAuth: true },
-        // }
       ],
     },
-    // {
-    //   path: '/',
-    //   name: 'Dashboard',
-    //   component: Dashboard,
-    //   // 製作巢狀router路徑
-    //   children: [
-    //     {
-    //       path: 'customer_order',
-    //       name: 'CustomerOrder',
-    //       component: CustomerOrder,
-    //     },
-    //     {
-    //       path: 'customer_checkout/:orderId',
-    //       name: 'CustomerCheckout',
-    //       component: CustomerCheckout,
-    //     },
-    //   ],
-    // },
   ],
 });

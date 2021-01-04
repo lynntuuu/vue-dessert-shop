@@ -16,7 +16,7 @@
           <td class="text-left align-middle">
             <ul class="list-unstyled" >
               <li v-for="productItem in item.products" :key="productItem.id">
-                {{ productItem.product.title }}：{{ productItem.qty }} {{ productItem.product.unit }}
+                {{productItem.product.title}}：{{productItem.qty}} {{productItem.product.unit}}
               </li>
             </ul>
           </td>

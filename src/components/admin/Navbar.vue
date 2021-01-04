@@ -87,7 +87,6 @@ export default{
       const api = `${process.env.APIPATH}/logout`;
       const vm = this;
       this.$http.post(api).then((response) => {
-        console.log(response.data);
         if (response.data.success){
           vm.$router.push('/login');
         }
@@ -106,7 +105,6 @@ export default{
     }
   }
 }
-
 .sidebar-btn {
   @media (min-width: 576px) {
     display: none;

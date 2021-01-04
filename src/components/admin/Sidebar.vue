@@ -51,8 +51,5 @@
 }
 .nav-item a.active {
   background: rgb(125, 70, 0);
-  // background: rgb(101, 66, 54);
-  // background: rgb(119, 78, 36);
-  // background: rgb(109, 76, 61);
 }
 </style>

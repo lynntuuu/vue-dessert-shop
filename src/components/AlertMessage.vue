@@ -3,7 +3,7 @@
     <div class="alert alert-dismissible"
       :class="'alert-' + item.status"
       v-for="(item, i) in messages" :key="i">
-      {{ item.message }}
+      {{item.message}}
       <button type="button" class="close" @click="REMOVEMESSAGE(i)" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex';
+import {mapGetters, mapMutations} from 'vuex';
 
 export default {
   name: 'Navbar',

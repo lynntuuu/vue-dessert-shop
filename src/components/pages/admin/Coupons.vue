@@ -20,12 +20,12 @@
       </thead>
       <tbody>
         <tr v-for="(item, key) in coupons" :key="key" class="align-middle">
-          <td class="align-middle">{{ item.title }}</td>
+          <td class="align-middle">{{item.title}}</td>
           <td class="text-left align-middle text-success" :class="{ 'text-black-50': (!item.is_enabled) ? true : false }">
             {{item.code}}
           </td>
-          <td class="text-left align-middle">{{ item.percent }}%</td>
-          <td class="text-left align-middle">{{ item.due_date | date }}</td>
+          <td class="text-left align-middle">{{item.percent}}%</td>
+          <td class="text-left align-middle">{{item.due_date | date}}</td>
           <td class="text-center align-middle">
             <span v-if="item.is_enabled === 1" class="text-success">啟用</span>
             <span v-else class="text-muted">未啟用</span>
@@ -144,7 +144,6 @@ export default {
       this.$http.get(url, vm.tempProduct).then((response) => {
         this.$store.commit('LOADING', false, { root: true });
         vm.coupons = response.data.coupons;
-        console.log(response);
       });
     },
     updateCoupon() {
@@ -152,7 +151,6 @@ export default {
       if (vm.isNew) {
         const url = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/admin/coupon`;
         this.$http.post(url, { data: vm.tempCoupon }).then((response) => {
-          console.log(response, vm.tempCoupon);
           $('#couponModal').modal('hide');
           this.getCoupons();
         });
@@ -160,7 +158,6 @@ export default {
         const url = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/admin/coupon/${vm.tempCoupon.id}`;
         vm.due_date = new Date(vm.tempCoupon.due_date * 1000);
         this.$http.put(url, { data: vm.tempCoupon }).then((response) => {
-          console.log(response);
           $('#couponModal').modal('hide');
           this.getCoupons();
         });

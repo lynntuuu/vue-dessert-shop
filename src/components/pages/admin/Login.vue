@@ -93,7 +93,6 @@ export default {
       const vm = this;
       this.$store.commit('LOADING', true, { root: true });
       this.$http.post(api, vm.user).then((response) => {
-        console.log(response.data.message);
         if (response.data.success) {
           this.$store.commit('LOADING', false, { root: true });
           const token = response.data.token;

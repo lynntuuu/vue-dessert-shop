@@ -25,16 +25,16 @@
             </thead>
             <tbody>
               <tr v-for="(item,key) in products" :key="item.id" class="align-middle">
-                <td class="text-center align-middle">{{ item.category }}</td>
-                <td class="align-middle">{{ item.title }}</td>
+                <td class="text-center align-middle">{{item.category}}</td>
+                <td class="align-middle">{{item.title}}</td>
                 <td class="text-right align-middle">
-                  {{ item.origin_price | currency }}
+                  {{item.origin_price | currency}}
                 </td>
                 <td class="text-right align-middle">
-                  {{ item.price | currency }}
+                  {{item.price | currency}}
                 </td>
                 <td class="text-center align-middle">
-                  <span class="text-success" v-if="is_enabled = 1">啟用</span>
+                  <span class="text-success" v-if="item.is_enabled">啟用</span>
                   <span v-else>未啟用</span>
                 </td>
                 <td class="text-center"> 
@@ -172,8 +172,8 @@
             </button>
           </div>
           <div class="modal-body">
-              是否刪除 
-              <strong class="text-danger">{{ tempProduct.title }}</strong> 商品(刪除後將無法恢復)。
+            是否刪除 
+            <strong class="text-danger">{{tempProduct.title}}</strong> 商品(刪除後將無法恢復)。
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">取消</button>
@@ -213,10 +213,8 @@ export default{
     getProducts(page = 1){
       const api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/admin/products?page=${page}`;
       const vm = this;
-      console.log(process.env.APIPATH, process.env.CUSTOMPATH);
       this.$store.commit('LOADING', true, { root: true });
       this.$http.get(api).then((response) => {
-        console.log(response.data);
         this.$store.commit('LOADING', false, { root: true });
         vm.products = response.data.products;
         vm.pagination = response.data.pagination;
@@ -250,10 +248,8 @@ export default{
         api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/admin/product/${vm.tempProduct.id}`;
         httpMethod = 'put';
       }
-      console.log(process.env.APIPATH, process.env.CUSTOMPATH);
       // 因為所送出的參數為物件，因此要用花括號包覆
       this.$http[httpMethod](api, { data: vm.tempProduct }).then((response) => {
-        console.log(response.data);
         if (response.data.success){
           // 如果有新增成功的話，將Modal關起來
           $('#productModal').modal('hide');
@@ -262,7 +258,6 @@ export default{
         }else{
           $('#productModal').modal('hide');
           vm.getProducts();
-          console.log('新增產品失敗');
         }
       });
     },
@@ -275,11 +270,9 @@ export default{
           $('#delProductModal').modal('hide');
           vm.$store.dispatch('alertModules/updateMessage', { message: response.data.message, status: 'success' }, { root: true });
           vm.getProducts();
-          console.log(response.data.success);
         }else{
           $('#delProductModal').modal('hide');
           vm.getProducts();
-          console.log(response.data.success);
         }  
       });
     },
@@ -296,7 +289,6 @@ export default{
           'Content-type' : 'multipart/form-data'
         }
       }).then((response) =>{
-        console.log(response.data);
         vm.status.fileUploading = false;
         // 圖片路徑會對應到tempProduct的imgUrl
         if (response.data.success) {
@@ -312,6 +304,4 @@ export default{
     this.getProducts();
   },
 }
-
-
 </script>

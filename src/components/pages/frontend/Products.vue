@@ -66,14 +66,14 @@
                   </router-link>
                 </div>
                 <div class="card-body p-0 pt-4 pm-2 align-items-">
-                  <h5 class="card-title">{{ item.title }}</h5>
-                  <p class="card-text card-content text-gray-700">{{ item.description }}</p>
+                  <h5 class="card-title">{{item.title }}</h5>
+                  <p class="card-text card-content text-gray-700">{{item.description}}</p>
                   <div class="card-price pt-3 d-flex justify-content-between align-items-end">
-                    <span class="price text-danger">{{ item.price | currency }} 元</span>
+                    <span class="price text-danger">{{item.price | currency}} 元</span>
                     <span
                       class="orange-price"
                       v-if="item.origin_price"
-                    >{{ item.origin_price | currency }} 元</span>
+                    >{{item.origin_price | currency}} 元</span>
                   </div>
                   <button
                     type="button"
@@ -124,7 +124,6 @@ export default {
       } else {
         this.$store.dispatch("cartModules/addtoCart", { id, qty });
       }
-
     }
   }
 };

@@ -14,7 +14,7 @@
           <li class="breadcrumb-item">
             <router-link to="/products" class="text-gray-600">購物商場</router-link>
           </li>
-          <li class="breadcrumb-item text-secondary active" aria-current="page">{{ product.title }}</li>
+          <li class="breadcrumb-item text-secondary active" aria-current="page">{{product.title}}</li>
         </ol>
       </nav>
       <div class="row detail mb-5">
@@ -25,11 +25,11 @@
           ></div>
         </div>
         <div class="col-md-6">
-          <h2>{{ product.title }}</h2>
-          <span class="orange-price d-block" v-if="product.origin_price">{{ product.origin_price | currency }} 元</span>
-          <span class="price text-danger d-block mb-4">{{ product.price | currency }} 元</span>
+          <h2>{{product.title}}</h2>
+          <span class="orange-price d-block" v-if="product.origin_price">{{product.origin_price | currency}} 元</span>
+          <span class="price text-danger d-block mb-4">{{product.price | currency}} 元</span>
 
-          <p class="text-gray-600 py-4 mh-100">{{ product.description }}</p>
+          <p class="text-gray-600 py-4 mh-100">{{product.description}}</p>
           <form class="border-bottom border-gray-600 py-4 mb-4">
             <div class="input-group align-items-end mb-4">
               <button
@@ -49,7 +49,7 @@
                 class="btn btn-sm btn-outline-primary ml-2 rounded"
                 @click="qty++"
               >＋</button>
-              <strong class="flex-grow-1 text-right">小計： {{ (product.price * qty) | currency }}元</strong>
+              <strong class="flex-grow-1 text-right">小計： {{(product.price * qty) | currency}}元</strong>
             </div>
             <button
               type="button"
@@ -68,7 +68,7 @@
                 <td width="80" height="35">
                   <strong>內容物</strong>
                 </td>
-                <td>{{ product.content }}</td>
+                <td>{{product.content}}</td>
               </tr>
               <tr>
                 <td width="80" height="35">

@@ -29,13 +29,13 @@
                 ></div>
               </td>
               <td class="align-middle" style="width:auto;">
-                <span>{{ item.product.title }}</span>
+                <span>{{item.product.title}}</span>
                 <br>
                 <span class="text-gray-600">x {{`${item.qty} ${item.product.unit}`}}</span>
                 <br>
-                <small class="text-success" v-if="item.coupon">優惠券-{{ item.coupon.title }}</small>
+                <small class="text-success" v-if="item.coupon">優惠券-{{item.coupon.title}}</small>
               </td>
-              <td class="align-middle text-right border-right">{{ item.total | currency }}元</td>
+              <td class="align-middle text-right border-right">{{item.total | currency}}元</td>
             </tr>
           </tbody>
           <tfoot>
@@ -44,13 +44,13 @@
                 v-if="(cart.total - cart.final_total) > 0"
                 >
                 折扣金額:
-                <span class="ml-4 mr-1">{{ cart.total - cart.final_total | currency }}元</span>
+                <span class="ml-4 mr-1">{{cart.total - cart.final_total | currency}}元</span>
               </td>
             </tr>
             <tr>
               <td colspan="3" class="bg-secondary text-right text-white font-weight-bold">
                 總計:
-                <span class="h2">{{ cart.final_total | currency }}元</span>
+                <span class="h2">{{cart.final_total | currency}}元</span>
               </td>
             </tr>
           </tfoot>
