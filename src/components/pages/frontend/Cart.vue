@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container p-3 p-md-4">
-      <h2 class="jam-title">購物車內容</h2>
+      <h2 class="title">購物車內容</h2>
       <div class="my-4" v-if="cart.total">
         <table class="table">
           <thead>
@@ -85,7 +85,7 @@
             <tr>
               <td colspan="4" class="d-md-table-cell d-none">
                 <div class="input-group input-group-sm mr-auto w-50">
-                  <input type="text" class="form-control" placeholder="請輸入 houdao 或 code 看看" v-model="couponCode">
+                  <input type="text" class="form-control" placeholder="請輸入 code 看看" v-model="couponCode">
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="button"
                     @click="addCouponCode"
