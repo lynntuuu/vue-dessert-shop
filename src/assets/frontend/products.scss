@@ -24,6 +24,7 @@
 .product-card {
   border: 1px solid $gray-200;
   padding: 1rem;
+  cursor: pointer;
   .product-img {
     // background-image:url('./assets/images/product1-1.jpg');
     height: 250px;
@@ -37,12 +38,16 @@
       height: 100%;
       color: $light;
       text-align: center;
-      &:hover {
-        opacity: 1;
-        background: rgba(0, 0, 0, 0.3);
-      }
     }
   }
+  &:hover {
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.233);
+    .more {
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.3);
+    }
+  }
+
   .card-title {
     letter-spacing: 1px;
   }
