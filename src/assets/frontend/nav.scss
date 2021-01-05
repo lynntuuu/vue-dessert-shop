@@ -8,7 +8,7 @@
     transition: .1s linear;
     display:block;
     border-bottom:3px solid transparent;
-    &:hover{
+    &:hover,&.active,&.show{
       color: $secondary;
       border-bottom:3px solid $secondary;
     }
