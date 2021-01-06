@@ -49,7 +49,7 @@
                 class="btn btn-sm btn-outline-primary ml-2 rounded"
                 @click="qty++"
               >＋</button>
-              <strong class="flex-grow-1 text-right">小計： {{(product.price * qty) | currency}}元</strong>
+              <strong class="flex-grow-1 text-right" v-if="product.id">小計： {{(product.price * qty) | currency}}元</strong>
             </div>
             <button
               type="button"
