@@ -1,5 +1,5 @@
 <template>
-  <div id="detail" v-cloak>
+  <div id="detail">
     <loading :active.sync="isLoading">
       <template slot="default">
         <img src="@/assets/images/loading.png">
